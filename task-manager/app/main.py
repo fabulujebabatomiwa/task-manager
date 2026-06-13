@@ -8,11 +8,11 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-app.add_middleware(
+apapp.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://task-manager-sepia-one-80.vercel.app/"
+        "https://task-manager-sepia-one-80.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
