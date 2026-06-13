@@ -8,7 +8,7 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-apapp.add_middleware(
+app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
