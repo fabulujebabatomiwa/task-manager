@@ -70,7 +70,8 @@ def create_task(request: TaskCreate, user_id: int = Depends(get_current_user), d
         user_id=user_id,
         title=request.title,
         description=request.description,
-        priority=request.priority
+        priority=request.priority,
+        due_date=request.due_date
     )
     db.add(task)
     db.commit()
