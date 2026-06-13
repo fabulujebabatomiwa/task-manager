@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:8000'
+const API = 'https://task-manager-xfg7.onrender.com/'
 
 interface AuthProps {
   onLogin: (token: string) => void

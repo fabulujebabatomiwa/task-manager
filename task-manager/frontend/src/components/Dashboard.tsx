@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:8000'
+const API = 'https://task-manager-xfg7.onrender.com/'
 
 interface Task {
   id: number
