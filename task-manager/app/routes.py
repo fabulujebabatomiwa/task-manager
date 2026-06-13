@@ -43,18 +43,21 @@ def login(request: LoginRequest, db: Session = Depends(get_db)):
 from app.auth import hash_password, verify_password, create_access_token, get_current_user
 from app.models import Task
 
+from datetime import datetime
+from typing import Optional
+
 class TaskCreate(BaseModel):
     title: str
-    description: str = None
+    description: Optional[str] = None
     priority: str = "medium"
-    due_date: str = None
+    due_date: Optional[datetime] = None
 
 class TaskUpdate(BaseModel):
-    title: str = None
-    description: str = None
-    priority: str = None
-    status: str = None
-    due_date: str = None
+    title: Optional[str] = None
+    description: Optional[str] = None
+    priority: Optional[str] = None
+    status: Optional[str] = None
+    due_date: Optional[datetime] = None
 
 @router.get("/tasks")
 def get_tasks(user_id: int = Depends(get_current_user), db: Session = Depends(get_db)):
