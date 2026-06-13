@@ -56,7 +56,7 @@ export default function Dashboard({ token, onLogout }: DashboardProps) {
     try {
       await axios.post(`${API}/tasks`, {
         title, description, priority,
-        due_date: dueDate || null
+        due_date: dueDate ? new Date(dueDate).toISOString() : null
       }, { headers })
       setTitle('')
       setDescription('')
